@@ -1,0 +1,37 @@
+GET http://localhost:8800/api/hotels
+Content-Type: application/json
+
+{
+
+}
+
+###
+
+PUT http://localhost:8800/api/hotels/65416d049de42a7c6d0cbac7
+Content-Type: application/json
+
+{
+    "name": "Hotel Luchianno"
+}
+
+###
+
+POST http://localhost:8800/api/hotels
+Content-Type: application/json
+
+{
+    "name": "Hotel jhon",
+    "type": "hotel",
+    "city": "berlin",
+    "address": "algunlugar",
+    "distance": "300",
+    "title": "alto hotel",
+    "description": "hotel description",
+    "cheapestPrice": 100
+}
+
+
+###
+
+
+DELETE http://localhost:8800/api/hotels/65416d049de42a7c6d0cbac7
