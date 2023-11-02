@@ -1,5 +1,9 @@
 import User from "../models/user.js";
 import bcrypt from "bcryptjs"
+import createError from "http-errors";
+
+
+//////////////////////REGISTRATION
 
 export const register = async (req, res, next) => {
     try {
@@ -18,4 +22,28 @@ export const register = async (req, res, next) => {
     } catch(err){
         next(err);
     }
-}
+};
+
+
+////////////////////////Login
+
+
+export const login = async (req, res, next) => {
+    try {
+        const user = await User.findOne({username: req.body.username});
+
+        if(!user) return next(createError(404, "User not found"));
+
+        const isPasswordCorrect = await bcrypt.compare(
+            req.body.password, user.password
+            );
+        if(!isPasswordCorrect) 
+            return next(createError(404, "Password or username incorrect"));
+
+        //para que no se vean los detalles de contraseña o cosas que no queremos
+        const { password, ...otherDetails } = user._doc;
+        res.status(200).json(otherDetails);
+    } catch(err){
+        next(err);
+    }
+};
