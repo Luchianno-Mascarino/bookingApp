@@ -7,7 +7,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8800/api/hotels/65416d049de42a7c6d0cbac7
+PUT http://localhost:8800/api/hotels/654188ce2eadc5ade98e0908
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ POST http://localhost:8800/api/hotels
 Content-Type: application/json
 
 {
-    "name": "Hotel jhon",
+    "name": "Hotel Mariano",
     "type": "hotel",
     "city": "berlin",
     "address": "algunlugar",
