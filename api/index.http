@@ -11,7 +11,7 @@ PUT http://localhost:8800/api/hotels/654188ce2eadc5ade98e0908
 Content-Type: application/json
 
 {
-    "name": "Hotel Luchianno"
+    "name": "Hotel Crack Updated"
 }
 
 ###
@@ -43,9 +43,10 @@ POST http://localhost:8800/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "prueba",
-    "email": "prueba@jjs.com",
-    "password": "1234"
+    "username": "admin3",
+    "email": "admin3@jjs.com",
+    "password": "5444",
+    "isAdmin": true
     
 }
 
@@ -57,10 +58,20 @@ POST http://localhost:8800/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "prueba",
-    "password": "1234"
+    "username": "admin3",
+    "password": "5444"
     
 }
 
+
+###
+
+
+GET  http://localhost:8800/api/users/checkadmin/654419ddc129ccccfda2c36e
+Content-Type: application/json
+
+{
+    "username": "prueba"
+}
 
 ###
