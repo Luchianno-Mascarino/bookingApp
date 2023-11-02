@@ -35,3 +35,19 @@ Content-Type: application/json
 
 
 DELETE http://localhost:8800/api/hotels/65416d049de42a7c6d0cbac7
+
+
+###
+
+POST http://localhost:8800/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "prueba",
+    "email": "prueba@jjs.com",
+    "password": "1234"
+    
+}
+
+
+###
