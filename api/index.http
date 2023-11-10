@@ -20,9 +20,9 @@ POST http://localhost:8800/api/hotels
 Content-Type: application/json
 
 {
-    "name": "Hotel Mariano",
+    "name": "Hotel angeles 4",
     "type": "hotel",
-    "city": "berlin",
+    "city": "london",
     "address": "algunlugar",
     "distance": "300",
     "title": "alto hotel",
@@ -75,3 +75,33 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:8800/api/rooms/65416e609de42a7c6d0cbac9
+Content-Type: application/json
+
+{
+    "title": "King Room",
+    "description": "King size bed, 1 bathroom",
+    "price": 100,
+    "maxPeople":2,
+    "roomNumbers": [{"number":101}, {"number":102}, {"number":103}]
+    
+}
+
+###
+
+DELETE http://localhost:8800/api/rooms/65450bf78c1b56a6976c315f/65416e609de42a7c6d0cbac9
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:8800/api/hotels/countByCity?cities=berlin,madrid,london
+Content-Type: application/json
+
+{
+
+}
+
+###
+

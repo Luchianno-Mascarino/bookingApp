@@ -60,3 +60,31 @@ export const getAllHotel = async (req, res, next) => {
     }
 
 }
+
+//GETALL count by city
+export const countByCity = async (req, res, next) => {
+    const cities = req.query.cities.split(",");
+    try {
+        const promises = cities.map(async (city) => {
+            return await hotel.countDocuments({ city: city });
+        });
+
+        const results = await Promise.all(promises);
+
+        res.status(200).json(results);
+    } catch (err) {
+        next(err);
+    }
+};
+
+
+//GETALL count by type
+export const countByType = async (req, res, next) => {
+    try{
+        const hotels = await hotel.find();
+        res.status(200).json(hotels);
+    } catch(err){
+        next(err);
+    }
+
+}

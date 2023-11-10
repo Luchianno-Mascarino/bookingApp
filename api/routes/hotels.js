@@ -1,6 +1,6 @@
 import express from "express";
 import hotel from "../models/hotel.js";
-import { createHotel, deleteHotel, getAllHotel, getHotel, updateHotel } from "../controllers/hotelControllers.js";
+import { countByCity, createHotel, deleteHotel, getAllHotel, getHotel, updateHotel } from "../controllers/hotelControllers.js";
 import { verifyToken, verifyUser, verifyAdmin } from "../utils/verifyToken.js";
 
 import { error } from "console";
@@ -21,11 +21,13 @@ router.delete("/:id", verifyAdmin, deleteHotel);
 
 //GET
 
-router.get("/:id", getHotel);
+router.get("/find/:id", getHotel);
 
 //GETALL
 
 router.get("/", getAllHotel);
+router.get("/countByCity", countByCity);
+router.get("/countByType", getAllHotel);
 
 /*router.get("/", (req, res) =>{
     res.send('Hello, this is hotels endpoint')
